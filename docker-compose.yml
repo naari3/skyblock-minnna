@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  mc:
+    ports:
+      - "25565:25565"
+      - "25575:25575"
+    volumes:
+      - "mcbig:/data"
+    environment:
+      VERSION: "1.18.2"
+      EULA: "TRUE"
+      MAX_MEMORY: 5G
+      DIFFICULTY: normal
+      MOTD: "skyblock rinji server"
+      # MAX_BUILD_HEIGHT: 256
+      # VIEW_DISTANCE: 15
+      # LEVEL_TYPE: LARGEBIOMES
+      # MAX_PLAYERS: 100
+      WORLD: https://skyblock.net/download/Skyblock%202.1.zip
+    image: itzg/minecraft-server
+    restart: always
+  rcon:
+    image: itzg/rcon
+    ports:
+      - "4326:4326"
+      - "4327:4327"
+    volumes:
+      - "rcon:/opt/rcon-web-admin/db"
+    environment:
+      RWA_USERNAME: admin
+      RWA_PASSWORD: admin
+      RWA_ADMIN: "TRUE"
+      RWA_RCON_HOST: mc
+      RWA_RCON_PASSWORD: minecraft
+  bot:
+    image: ghcr.io/naari3/minecraft-command-bot
+    environment:
+      RCON_HOST: mc
+      RCON_PASSWORD: minecraft
+      DISCORD_BOT_TOKEN: your_token
+
+volumes:
+  mcbig:
+  rcon:

@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  rcon:
+    environment:
+      RWA_USERNAME: admin
+      RWA_PASSWORD: admin
+  bot:
+    image: ghcr.io/naari3/minecraft-command-bot
+    environment:
+      RCON_PASSWORD: minecraft
+      DISCORD_BOT_TOKEN: your_token
