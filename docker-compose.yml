@@ -13,8 +13,9 @@ services:
       MAX_MEMORY: 5G
       DIFFICULTY: normal
       MOTD: "skyblock rinji server"
+      SIMULATION_DISTANCE: 17
+      VIEW_DISTANCE: 17
       # MAX_BUILD_HEIGHT: 256
-      # VIEW_DISTANCE: 15
       # LEVEL_TYPE: LARGEBIOMES
       # MAX_PLAYERS: 100
       WORLD: https://skyblock.net/download/Skyblock%202.1.zip
