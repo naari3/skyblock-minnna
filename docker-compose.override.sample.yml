@@ -9,3 +9,5 @@ services:
     environment:
       RCON_PASSWORD: minecraft
       DISCORD_BOT_TOKEN: your_token
+      DISCORD_BOT_TOKEN: your_token
+      MINECRAFT_LOG_CHANNEL_ID: your_channel_id
