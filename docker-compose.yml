@@ -36,7 +36,7 @@ services:
       RWA_RCON_HOST: mc
       RWA_RCON_PASSWORD: minecraft
   bot:
-    image: ghcr.io/naari3/minecraft-command-bot:v1.3.0
+    image: ghcr.io/naari3/minecraft-command-bot:v1.3.1
     environment:
       RCON_HOST: mc
       RCON_PASSWORD: minecraft
